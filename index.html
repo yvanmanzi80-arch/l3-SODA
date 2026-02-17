@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIMS | Stock Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= REGISTER SECTION ================= -->
+<section id="register-section" class="page">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+        <label>Full Name</label>
+        <input type="text" id="regName">
+
+        <label>Email</label>
+        <input type="email" id="regEmail">
+
+        <label>Password</label>
+        <input type="password" id="regPassword">
+
+        <label>Confirm Password</label>
+        <input type="password" id="regConfirmPassword">
+
+        <button type="submit">Register</button>
+        <p class="message" id="registerMessage"></p>
+        <p>Already have account? <a href="#" id="showLogin">Login</a></p>
+    </form>
+</section>
+
+<!-- ================= LOGIN SECTION ================= -->
+<section id="login-section" class="page hidden">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="loginEmail">
+
+        <label>Password</label>
+        <input type="password" id="loginPassword">
+
+        <button type="submit">Login</button>
+        <p class="message" id="loginMessage"></p>
+        <p>No account? <a href="#" id="showRegister">Register</a></p>
+    </form>
+</section>
+
+<!-- ================= DASHBOARD SECTION ================= -->
+<section id="dashboard-section" class="hidden">
+
+    <header>
+        <h1>SIMS – Stock Inventory Management System</h1>
+        <div>
+            <span id="loggedUser"></span>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <aside id="sidebar">
+            <ul>
+                <li>Dashboard</li>
+                <li>Products</li>
+                <li>Reports</li>
+                <li>Settings</li>
+            </ul>
+        </aside>
+
+        <main>
+
+            <!-- SUMMARY CARDS -->
+            <section class="cards">
+                <div class="card">
+                    <h3>Total Products</h3>
+                    <p id="totalProducts">0</p>
+                </div>
+                <div class="card">
+                    <h3>In Stock</h3>
+                    <p id="inStock">0</p>
+                </div>
+                <div class="card">
+                    <h3>Out of Stock</h3>
+                    <p id="outStock">0</p>
+                </div>
+            </section>
+
+            <!-- ADD PRODUCT BUTTON -->
+            <button id="addProductBtn" class="add-btn">+ Add Product</button>
+
+            <!-- PRODUCT FORM -->
+            <section id="productFormSection" class="hidden">
+                <h3>Add Product</h3>
+                <form id="productForm">
+                    <label>Product Name</label>
+                    <input type="text" id="productName">
+
+                    <label>Category</label>
+                    <input type="text" id="productCategory">
+
+                    <label>Quantity</label>
+                    <input type="number" id="productQuantity">
+
+                    <label>Price</label>
+                    <input type="number" id="productPrice">
+
+                    <button type="submit">Save</button>
+                </form>
+            </section>
+
+            <!-- PRODUCTS TABLE -->
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTableBody"></tbody>
+                </table>
+                <p id="emptyState" class="hidden">No products available.</p>
+            </section>
+
+        </main>
+    </div>
+</section>
+
+<script src="s.js"></script>
+</body>
+</html>
