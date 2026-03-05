@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+   
     const registerSection = document.getElementById("register-section");
     const loginSection = document.getElementById("login-section");
     const dashboardSection = document.getElementById("dashboard-section");
@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("registerForm").onsubmit = (e) => {
         e.preventDefault();
 
+        const nameRegex = /^[A-Za-z\s]+$/;
+
+if (!nameRegex.test(name))
+    return registerMessage.textContent = "Name must contain letters only.";
         const name = regName.value.trim();
         const email = regEmail.value.trim();
         const password = regPassword.value;
